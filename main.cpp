@@ -63,8 +63,8 @@ public:
   
     void slash(Monster &target) {
         int damage = getAtt() - target.getDef();
-        if (damage > 0) {
-            target.getSlash(damage);
+        if (target.getHp() >= 400) {
+            target.setHp(target.getHp() - 400);
         }
         else {cout << "def terlalu tinggi coba berlatih kembali"<< endl;
          }
@@ -94,5 +94,4 @@ int main() {
     // selese
 
 
-    return 0;
-};
+    return 0;}
